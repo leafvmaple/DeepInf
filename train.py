@@ -25,7 +25,7 @@ import shutil
 embedding, vertex_features, train_data, valid_data, test_data = load_data(embedding_dim=64, train_ratio= 75, valid_ratio=12.5)
 classes_cnt, class_weight, feature_dim = get_data_info(train_data)
 
-def evaluate(model, epoch, data, thr=None, return_best_thr=False):
+def evaluate(model, epoch, data):
     model.eval()
     total = 0
     loss = 0
