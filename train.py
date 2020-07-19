@@ -53,7 +53,7 @@ def evaluate(model, epoch, data, thr=None, return_best_thr=False):
 
 def train(model_type, epochs):
     if model_type == "gcn":
-        model = Gcn(embedding=embedding, units=[feature_dim, 128, 128, classes_cnt], dropout=0.2, vertex_feature=vertex_features)
+        model = Gcn(embedding=embedding, units=[feature_dim, 64, 64, classes_cnt], dropout=0.2, vertex_feature=vertex_features)
     elif model_type == "gat":
         model = Gat(embedding=embedding, units=[feature_dim, 16, 16, classes_cnt], heads=[8, 8, 1], dropout=0.1, vertex_feature=vertex_features)
 
@@ -82,7 +82,7 @@ def train(model_type, epochs):
     evaluate(model, epochs, valid_data)
     evaluate(model, epochs, test_data)
 
-train("gcn", 1000)
-train("gat", 1000)
+train("gcn", 200)
+train("gat", 300)
 
 
